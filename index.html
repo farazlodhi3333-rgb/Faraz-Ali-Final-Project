@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Sindh | History, Culture and Heritage</title>
+
+    <meta name="description" content="Discover Sindh, Pakistan. Explore historical places, ancient civilizations, traditional food and Sindhi culture.">
+
+    <meta name="keywords" content="Discover Sindh, Sindh tourism, Mohenjo-daro, Makli, Keenjhar Lake, Ranikot Fort">
+
+    <meta name="author" content="Discover Sindh">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #151112;
+            color: #f4eadb;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #e8b653;
+            text-decoration: none;
+        }
+
+        header {
+            background: #290e14;
+            padding: 22px 7%;
+            border-bottom: 1px solid #795322;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 29px;
+            font-weight: bold;
+        }
+
+        .logo span,
+        .hero h1 span {
+            color: #e8b653;
+        }
+
+        header p {
+            color: #d2bda5;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 15px 7%;
+            background: #211013;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #f4eadb;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #e8b653;
+        }
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            padding: 55px 8%;
+            background:
+                linear-gradient(90deg, #160d0eef, #160d0e55),
+                url("discover.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .gold-text {
+            color: #e8b653;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            line-height: 1.2;
+            margin: 12px 0;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #e8b653;
+            color: #211214;
+            padding: 11px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .button:hover {
+            background: #f6d28b;
+        }
+
+        .section {
+            padding: 55px 7%;
+        }
+
+        .section h2,
+        .feature h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin: 5px 0 10px;
+        }
+
+        .intro {
+            color: #c8bcb5;
+        }
+
+        #search {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            padding: 13px;
+            margin: 25px 0;
+            border: 1px solid #795322;
+            border-radius: 5px;
+            background: #251a1c;
+            color: white;
+            font-size: 15px;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #23191b;
+            border: 1px solid #55402c;
+            border-radius: 7px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            margin: 6px 0;
+        }
+
+        .card p {
+            color: #c8bcb5;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .feature-section {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            padding: 35px 7%;
+            background: #241417;
+            border-top: 1px solid #604124;
+            border-bottom: 1px solid #604124;
+        }
+
+        .feature {
+            padding: 22px;
+            border-left: 3px solid #e8b653;
+        }
+
+        .feature p {
+            color: #d2c5bd;
+        }
+
+        .about {
+            max-width: 750px;
+            margin: auto;
+            padding: 55px 20px;
+            text-align: center;
+        }
+
+        footer {
+            background: #290e14;
+            border-top: 1px solid #795322;
+            text-align: center;
+            padding: 28px 15px;
+        }
+
+        footer p {
+            color: #c8bcb5;
+            font-size: 13px;
+        }
+
+        /* Article view */
+
+        #article-page {
+            display: none;
+        }
+
+        .article-banner {
+            background: #281619;
+            padding: 40px 7%;
+        }
+
+        .article-banner h1 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin: 8px 0;
+        }
+
+        .article-banner img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 7px;
+            margin-top: 20px;
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: auto;
+            padding: 35px 25px 60px;
+        }
+
+        .article-content h2 {
+            color: #e8b653;
+            font-family: Georgia, serif;
+            margin: 25px 0 8px;
+        }
+
+        .article-content p,
+        .article-content li {
+            color: #d7cbc3;
+        }
+
+        .article-content ul {
+            padding-left: 25px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 10px 16px;
+            border: 1px solid #e8b653;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 15px;
+                padding: 13px 5%;
+            }
+
+            .hero {
+                padding: 40px 6%;
+                min-height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .section {
+                padding: 35px 5%;
+            }
+
+            .destination-grid,
+            .feature-section {
+                grid-template-columns: 1fr;
+            }
+
+            .card img {
+                height: 200px;
+            }
+
+            .article-banner h1 {
+                font-size: 31px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Discover <span>Sindh</span></div>
+    <p>HISTORY • CULTURE • HERITAGE</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showHome(); return false;">Home</a>
+    <a href="#destinations" onclick="showHome();">Destinations</a>
+    <a href="#culture" onclick="showHome();">Culture</a>
+    <a href="#food" onclick="showHome();">Food</a>
+    <a href="#about" onclick="showHome();">About</a>
+</nav>
+
+<div id="home-page">
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="gold-text">EXPLORE THE LAND OF HERITAGE</p>
+            <h1>Discover the Beauty of <span>Sindh</span></h1>
+            <p>
+                Explore ancient civilizations, historical places,
+                traditional food and the rich culture of Sindh.
+            </p>
+            <a href="#destinations" class="button">Explore Destinations →</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="section" id="destinations">
+            <p class="gold-text">EXPLORE OUR LAND</p>
+            <h2>Popular Destinations</h2>
+            <p class="intro">Discover the places that make Sindh special.</p>
+
+            <input type="text" id="search"
+            placeholder="Search destinations..."
+            oninput="searchPlaces()">
+
+            <div class="destination-grid">
+
+                <article class="card">
+                    <img src="mohenjo.jpg"
+                    alt="Historic architecture">
+                    <div class="card-content">
+                        <p class="gold-text">ANCIENT HISTORY</p>
+                        <h3>Mohenjo-daro</h3>
+                        <p>Discover the ancient Indus Valley Civilization.</p>
+                        <a href="#mohenjo-daro" class="read-more"
+                        onclick="showArticle('mohenjo-daro'); return false;">Read Article →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80"
+                    alt="Historic monument">
+                    <div class="card-content">
+                        <p class="gold-text">HISTORICAL HERITAGE</p>
+                        <h3>Makli Necropolis</h3>
+                        <p>Explore the historic tombs near Thatta.</p>
+                        <a href="#makli" class="read-more"
+                        onclick="showArticle('makli'); return false;">Read Article →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="keenjhar.jfif"
+                    alt="Water and natural landscape">
+                    <div class="card-content">
+                        <p class="gold-text">NATURAL BEAUTY</p>
+                        <h3>Keenjhar Lake</h3>
+                        <p>Learn about a famous freshwater lake in Sindh.</p>
+                        <a href="#keenjhar-lake" class="read-more"
+                        onclick="showArticle('keenjhar-lake'); return false;">Read Article →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                    alt="Rocky landscape">
+                    <div class="card-content">
+                        <p class="gold-text">FORT AND HISTORY</p>
+                        <h3>Ranikot Fort</h3>
+                        <p>Discover a remarkable historic fort in Sindh.</p>
+                        <a href="#ranikot" class="read-more"
+                        onclick="showArticle('ranikot'); return false;">Read Article →</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="feature-section">
+            <div class="feature" id="culture">
+                <p class="gold-text">OUR IDENTITY</p>
+                <h2>Sindhi Culture</h2>
+                <p>
+                    Discover Ajrak, Sindhi Topi, handicrafts,
+                    folk music and traditional art.
+                </p>
+                <a href="#culture-article" class="read-more"
+                onclick="showArticle('culture-article'); return false;">Explore Culture →</a>
+            </div>
+
+            <div class="feature" id="food">
+                <p class="gold-text">TASTE OF SINDH</p>
+                <h2>Traditional Food</h2>
+                <p>
+                    Learn about Sindhi Biryani, Sai Bhaji
+                    and traditional Sindhi Kadhi.
+                </p>
+                <a href="#food-article" class="read-more"
+                onclick="showArticle('food-article'); return false;">Explore Food →</a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <p class="gold-text">OUR PURPOSE</p>
+            <h2>Preserving Sindh's Heritage</h2>
+            <p>
+                Discover Sindh is an educational website
+                that introduces visitors to the history,
+                culture and beautiful places of Sindh, Pakistan.
+            </p>
+            <a href="#about-article" class="button"
+            onclick="showArticle('about-article'); return false;">Learn More →</a>
+        </section>
+    </main>
+</div>
+
+<!-- All articles are included in this same HTML file -->
+
+<div id="article-page">
+    <section class="article-banner">
+        <p class="gold-text" id="article-category"></p>
+        <h1 id="article-title"></h1>
+        <p id="article-location"></p>
+        <img id="article-image" src="" alt="">
+    </section>
+
+    <main class="article-content">
+        <h2 id="heading-one"></h2>
+        <p id="paragraph-one"></p>
+
+        <h2 id="heading-two"></h2>
+        <p id="paragraph-two"></p>
+
+        <h2 id="heading-three">What Can We Discover?</h2>
+        <ul id="article-list"></ul>
+
+        <a href="#" class="back-button" onclick="showHome(); return false;">
+            ← Back to Home
+        </a>
+    </main>
+</div>
+
+<footer>
+    <div class="logo">Discover <span>Sindh</span></div>
+    <p>History • Culture • Heritage</p>
+    <p>©️ 2026 Discover Sindh. Educational Project.</p>
+</footer>
+
+<script>
+    let articles = {
+        "mohenjo-daro": {
+            category: "ANCIENT CIVILIZATION",
+            title: "Mohenjo-daro",
+            location: "Larkana District, Sindh, Pakistan",
+            image: "mohenjo.jpg",
+            alt: "Historic architecture",
+            heading1: "History of Mohenjo-daro",
+            paragraph1: "Mohenjo-daro is an important archaeological site of the ancient Indus Valley Civilization. It flourished thousands of years ago in the region that is now Pakistan.",
+            heading2: "Historical Importance",
+            paragraph2: "The site provides evidence of organised streets, brick buildings, drainage systems and urban planning. These discoveries help us understand ancient city life.",
+            points: ["Ancient architecture and city planning", "Daily life in the Indus Valley Civilization", "The importance of protecting historical sites"]
+        },
+
+        "makli": {
+            category: "HISTORICAL HERITAGE",
+            title: "Makli Necropolis",
+            location: "Near Thatta, Sindh, Pakistan",
+            image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+            alt: "Historic architecture",
+            heading1: "History of Makli",
+            paragraph1: "Makli Necropolis is a vast historic cemetery near Thatta. Its monuments reflect different periods of Sindh's history.",
+            heading2: "Architecture and Art",
+            paragraph2: "The site is known for its historic tombs, stonework and decorative architectural details.",
+            points: ["Explore historic tombs and monuments", "Learn about Sindh's architecture", "Understand heritage conservation"]
+        },
+
+        "keenjhar-lake": {
+            category: "NATURAL BEAUTY",
+            title: "Keenjhar Lake",
+            location: "Thatta District, Sindh, Pakistan",
+            image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80",
+            alt: "Water and natural landscape",
+            heading1: "About Keenjhar Lake",
+            paragraph1: "Keenjhar Lake, also known as Kalri Lake, is a major freshwater lake in Sindh.",
+            heading2: "Natural Importance",
+            paragraph2: "The lake and surrounding wetlands provide habitat for birds and other wildlife. They are important for the local environment and biodiversity.",
+            points: ["Natural scenery and lake landscapes", "Birdlife and wetland habitats", "Local history and traditions"]
+        },
+
+        "ranikot": {
+            category: "FORT AND HISTORY",
+            title: "Ranikot Fort",
+            location: "Jamshoro District, Sindh, Pakistan",
+            image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+            alt: "Rocky landscape",
+            heading1: "About Ranikot Fort",
+            paragraph1: "Ranikot Fort is a remarkable historic fortification in Sindh, known for its extensive walls and rugged natural surroundings.",
+            heading2: "Architecture",
+            paragraph2: "Its long defensive walls and gates make it one of the notable historic landmarks in the region.",
+            points: ["Discover historic fort walls", "Learn about regional architecture", "Understand the importance of conservation"]
+        },
+
+        "culture-article": {
+            category: "OUR CULTURAL IDENTITY",
+            title: "Sindhi Culture and Traditions",
+            location: "Sindh, Pakistan",
+            image: "cultural.jpg",
+            alt: "Traditional textile",
+            heading1: "Ajrak and Sindhi Topi",
+            paragraph1: "Ajrak is a traditional textile known for its distinctive patterns. Sindhi Topi is a traditional cap decorated with embroidery and detailed designs.",
+            heading2: "Music and Handicrafts",
+            paragraph2: "Folk music, Sufi poetry, embroidery, pottery and traditional textile work are important parts of Sindh's cultural heritage.",
+            points: ["Traditional clothing and textiles", "Folk music and poetry", "Local handicrafts and art"]
+        },
+
+        "food-article": {
+            category: "TASTE OF SINDH",
+            title: "Traditional Sindhi Food",
+            location: "Sindh, Pakistan",
+            image: "food.jpg",
+            alt: "Traditional food",
+            heading1: "Sindhi Biryani",
+            paragraph1: "Sindhi Biryani is a popular rice dish prepared with spices and commonly served with meat.",
+            heading2: "Sai Bhaji and Sindhi Kadhi",
+            paragraph2: "Sai Bhaji is made with leafy greens, lentils and vegetables. Sindhi Kadhi is a traditional curry commonly prepared with gram flour, vegetables and spices.",
+            points: ["Sindhi Biryani", "Sai Bhaji", "Sindhi Kadhi"]
+        },
+
+        "about-article": {
+            category: "OUR STORY",
+            title: "About Discover Sindh",
+            location: "An educational web development project",
+            image: "discover.jpg",
+            alt: "Landscape",
+            heading1: "Our Mission",
+            paragraph1: "Discover Sindh is an educational website created to introduce visitors to the history, culture and traditional food of Sindh, Pakistan.",
+            heading2: "Our Vision",
+            paragraph2: "Our goal is to encourage people to learn about Sindh's heritage and appreciate its historical and cultural importance.",
+            points: ["Historical destinations", "Sindhi culture and traditions", "Traditional food and heritage"]
+        }
+    };
+
+    function showArticle(id) {
+        let article = articles[id];
+
+        if (!article) {
+            return;
+        }
+
+        document.getElementById("home-page").style.display = "none";
+        document.getElementById("article-page").style.display = "block";
+
+        document.getElementById("article-category").innerText = article.category;
+        document.getElementById("article-title").innerText = article.title;
+        document.getElementById("article-location").innerText = article.location;
+
+        document.getElementById("article-image").src = article.image;
+        document.getElementById("article-image").alt = article.alt;
+
+        document.getElementById("heading-one").innerText = article.heading1;
+        document.getElementById("paragraph-one").innerText = article.paragraph1;
+
+        document.getElementById("heading-two").innerText = article.heading2;
+        document.getElementById("paragraph-two").innerText = article.paragraph2;
+
+        document.getElementById("article-list").innerHTML = "";
+
+        for (let i = 0; i < article.points.length; i++) {
+            let item = document.createElement("li");
+            item.innerText = article.points[i];
+            document.getElementById("article-list").appendChild(item);
+        }
+
+        document.getElementById("article-page").scrollIntoView();
+    }
+
+    function showHome() {
+        document.getElementById("article-page").style.display = "none";
+        document.getElementById("home-page").style.display = "block";
+    }
+
+    function searchPlaces() {
+        let input = document.getElementById("search").value.toLowerCase();
+        let cards = document.getElementsByClassName("card");
+
+        for (let i = 0; i < cards.length; i++) {
+            let text = cards[i].innerText.toLowerCase();
+
+            if (text.includes(input)) {
+                cards[i].style.display = "block";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
